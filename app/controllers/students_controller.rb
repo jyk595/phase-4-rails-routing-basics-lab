@@ -10,4 +10,9 @@ class StudentsController < ApplicationController
     render json: student_grades
   end
 
+  def highest_grade
+    highest_grade = Student.order(grade: :desc).first
+    render json: highest_grade
+  end
+
 end
